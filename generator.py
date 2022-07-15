@@ -40,22 +40,3 @@ def Text_To_Image_by_text(path, text=Image_To_Text(path)):
     ImageDraw.Draw(img).text((0, 0), text, font=font, fill=('#F5F5F5'))
     img.save(path,'PNG')
     
-
-
-
-# arr=text.split('\n')
-# # arr=[[] for x in range(100)]
-# # for x in range(100):
-# #     for y in range(100):
-
-# #         arr1[x].append()
-# colors = [[] for x in range(100)]
-# try:
-#     for x in range(100):
-#         color = symbols.count(arr[x][y]) * 45
-#         colors[x].append([color, color,color])
-# except:
-#     True
-
-# img2 = Image.fromarray(np.uint8(colors)).convert('RGB')
-# img2.show()
