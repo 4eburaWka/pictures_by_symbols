@@ -6,7 +6,7 @@ from PIL import Image
 import numpy as np
 from aiogram.types.input_file import InputFile
 from io import BytesIO
-API_TOKEN = '5365842454:AAEWBvJDeG1Vmg18rSuEYCONoFZI0iS6GJM'
+API_TOKEN = 'your token'
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
