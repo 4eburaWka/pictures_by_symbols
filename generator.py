@@ -16,26 +16,32 @@ def Image_To_Text(path : str, size=175, symbols=symbols) -> str:
         arr = np.asarray(img)
     text = ''
 
-    for x in range(0, size, 2):
-        
-        for y in range(size):
-            RGB = 0             # 765 max
-            for canal in arr[x][y]:
-                RGB += canal
-            text += symbols[RGB // (765 // len(symbols))]
-        text += '\n'
+    try:
+        for x in range(0, size, 2):
+            
+            for y in range(size):
+                RGB = 0             # 765 max
+                for canal in arr[x][y]:
+                    RGB += canal
+                text += symbols[RGB // (765 // len(symbols)) - 1]
+            text += '\n'
+    except IndexError:
+        True
     return text
 
-text = Image_To_Text('E:\\dada.jpg')
 
-def Text_To_Image_by_text(text, img):
+
+
+
+
+def Text_To_Image_by_text(path, text=Image_To_Text(path)):
+    img = Image.new('RGB', (1050,1040), color=('#000000'))
     font = ImageFont.truetype('C:\Windows\Fonts\CONSOLA.TTF', size=10)
     ImageDraw.Draw(img).text((0, 0), text, font=font, fill=('#F5F5F5'))
+    img.save(path,'PNG')
+    
 
 
-img = Image.new('RGB', (1050,1040), color=('#000000'))
-Text_To_Image_by_text(text, img)
-img.show(text)
 
 # arr=text.split('\n')
 # # arr=[[] for x in range(100)]
