@@ -1,11 +1,10 @@
-import logging
 from generator import *
 from io import BytesIO
 from aiogram import Bot, Dispatcher, executor, types
-from PIL import Image
-import numpy as np
 from aiogram.types.input_file import InputFile
-from io import BytesIO
+import logging
+
+
 API_TOKEN = 'your token'
 
 # Configure logging
